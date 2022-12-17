@@ -21,15 +21,9 @@
             function getPetsAsset(pets) {
                 var asset;
                 switch (pets) {
-					case "cows":
-                  		asset = "static/img/rancher-logo-cow-blue.png"
-                  		break;
-                	case "chameleons":
-                  		asset = "static/img/suse-logo-chameleon-green.png"
-                  		break;
-                	case "cowmeleons":
-                  		asset = "static/img/suse-rancher-cowmeleon.png"
-                  		break;
+					case "penguin":
+                        asset = "static/img/tux.png"
+                        break;
                 	default:
 						asset = "static/img/rancher-logo-cow-blue.png"
 				}
@@ -65,7 +59,7 @@
                 var removeInterval = Number({{ .RemoveInterval }});
 
                 $.ajax({
-                     url: "http://34.118.91.70:8080/demo?" + ts,
+		             url: "http://" + {{ .RemoteIP }} + ":" + {{ .RemotePORT }} + "/demo?" + ts,
                      dataType: "json",
                      cache: false,
                      beforeSend: function (request) {},

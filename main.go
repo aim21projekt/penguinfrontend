@@ -26,6 +26,8 @@ var (
 type (
 	Content struct {
 		Title           string
+		RemoteIP		string
+		RemotePORT		string
 		Version         string
 		Hostname        string
 		RefreshInterval string
@@ -113,6 +115,16 @@ func index(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	remoteIP := os.Getenv("REMOTEIP")
+	if remoteIP == "" {
+		remoteIP = "192.168.1.52"
+	}
+
+	remotePort := os.Getenv("REMOTEPORT")
+	if remotePort == "" {
+		remotePort = "8080"
+	}
+
 	title := os.Getenv("TITLE")
 	if title == "" {
 		title = "Rancher Demo"
@@ -136,6 +148,8 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 	cnt := &Content{
 		Title:           title,
+		RemoteIP:		 remoteIP,
+		RemotePORT:		 remotePort,
 		Version:         getVersion(),
 		Hostname:        hostname,
 		RefreshInterval: refreshInterval,
