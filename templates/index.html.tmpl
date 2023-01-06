@@ -59,7 +59,7 @@
                 var removeInterval = Number({{ .RemoveInterval }});
 
                 $.ajax({
-		             url: "http://" + {{ .RemoteIP }} + ":" + {{ .RemotePORT }} + "/demo?" + ts,
+		             url: "{{ .Proto }}://" + {{ .RemoteIP }} + ":" + {{ .RemotePORT }} + "/demo?" + ts,
                      dataType: "json",
                      cache: false,
                      beforeSend: function (request) {},

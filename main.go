@@ -26,6 +26,7 @@ var (
 type (
 	Content struct {
 		Title           string
+		Proto			string
 		RemoteIP		string
 		RemotePORT		string
 		Version         string
@@ -115,6 +116,11 @@ func index(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	proto := os.Getenv("PROTO")
+	if proto == "" {
+		proto = "https"
+	}
+
 	remoteIP := os.Getenv("REMOTEIP")
 	if remoteIP == "" {
 		remoteIP = "192.168.1.52"
@@ -148,6 +154,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 	cnt := &Content{
 		Title:           title,
+		Proto:			 proto,
 		RemoteIP:		 remoteIP,
 		RemotePORT:		 remotePort,
 		Version:         getVersion(),
