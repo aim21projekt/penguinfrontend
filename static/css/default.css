@@ -5,6 +5,7 @@
 div.meta {}
 .title {
     margin: 20px 0 40px 0;
+    color: white;
 }
 .error {
     color: #9a3b3b;
@@ -17,12 +18,14 @@ div.meta {}
 }
 div.value {
     text-overflow: ellipsis;
+    color: white;
 }
 .hide {
     display: none;
 }
 h1.ui.header {
     font-size: 38pt;
+    color: white;
 }
 .logo {
     width: 80%;
