@@ -97,7 +97,7 @@
                                 } else {
                                   displayName = displayName[1];
                                 }
-                                var elData = '<div id="instance-' + instanceName + '" class="card container-instance"><div class="image" id="replica" style="background-color: ' + contColor + ';"><img width="25%" height="25%" src="' + petsAsset + '"></div><div class="content centered view-computer"><div> {{ if .ShowVersion }}<div class="ui top left attached ' + color + ' label">' + data.version +'</div>{{ end }} <div id="instance-label-' + instanceName + '"class="ui top right attached green serving label">serving</div>' + displayName + '</div></div></div>';
+                                var elData = '<div id="instance-' + instanceName + '" class="card container-instance"; style="cursor: pointer;" onclick="window.location='penguin.pengamous.org';"><div class="image" id="replica" style="background-color: ' + contColor + ';"><img width="25%" height="25%" src="' + petsAsset + '"></div><div class="content centered view-computer"><div> {{ if .ShowVersion }}<div class="ui top left attached ' + color + ' label">' + data.version +'</div>{{ end }} <div id="instance-label-' + instanceName + '"class="ui top right attached green serving label">serving</div>' + displayName + '</div></div></div>';
 
                                 $("div.container-group").append(elData);
                                 el = $("#instance-" + instanceName);
@@ -154,7 +154,6 @@
         <div class="ui two column relaxed doubling padded grid">
             <div class="six wide column meta">
                 <div class="ui container">
-                    Inspired by <a href="https://github.com/ehazlett/docker-demo" target="_blank">ehazlett/docker-demo</a>
                     <img class="logo center" src="static/img/PengamousLogo.png"/>
 
 
