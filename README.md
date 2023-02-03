@@ -1,19 +1,10 @@
-# Rancher/Kubernetes Demo Application
+# Penguin Frontend Application
 
-This is a Go demo application used for demonstrating Kubernetes and load balancing.
+This is the frontend for www.pengamous.org or pengamous.org
 
-It will create a colored icon for each replica within a ReplicaSet and indicate which one
-most recently served a response. Replicas which haven't been heard from will begin to fade
-out, until after a configurable number of seconds they will disappear. This is useful for
-demonstrating scaling up/down or in the case of an application like [Rio](https://rio.io),
-for showing scale-in of an upgraded application.
-
-![screenshot](screenshot-demo.png)
 
 ## Environment Variables
 
-- `TITLE`: sets title in demo app
-- `SHOW_VERSION`: show version of app in ui (`VERSION` env var)
 - `REFRESH_INTERVAL`: interval in milliseconds for page to refresh (default: 1000)
 - `EXPIRE_INTERVAL`: how long a replica can go without being seen before we remove it from the display (default: 10s)
 - `REMOVE_INTERVAL`: how long after `EXPIRE_INTERVAL` until we remove the icon (default: 20s)
@@ -35,10 +26,8 @@ for showing scale-in of an upgraded application.
   - cows
   - chameleons
   - cowmeleons
+  - penguins
 
-## Build
-
-`docker build -t monachus/rancher-demo .`
 
 ## Paths
 
@@ -50,13 +39,4 @@ By default the loaded page will reach back to `/demo` every `REFRESH_INTERVAL` a
 ## Ports
 
 The container will listen for traffic on port 8080.
-
-## Running
-
-Deploy using the included Helm chart under `./charts` or alternatively:
-
-1. Edit `base/configs/source-vars.yaml` and set the following:
-    - `MY_NAMESPACE`: the namespace into which the app will be deployed (default: `rancher-demo`). This will be created if it does not already exist.
-    - `URL_HOST`: the hostname portion of the URL that the ingress will answer on (default: `rancher-demo.cl.monach.us`)
-2. Run `kubectl apply -k base` to deploy the application.
 

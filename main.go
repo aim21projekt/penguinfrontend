@@ -133,7 +133,7 @@ func index(w http.ResponseWriter, r *http.Request) {
 
 	title := os.Getenv("TITLE")
 	if title == "" {
-		title = "Rancher Demo"
+		title = "Penguin Frontend"
 	}
 
 	hostname := getHostname()
@@ -299,8 +299,8 @@ func counter(h http.Handler) http.Handler {
 
 func main() {
 	app := cli.NewApp()
-	app.Name = "rancher-demo"
-	app.Usage = "rancher demo application"
+	app.Name = "penguin-frontend"
+	app.Usage = "penguin-frontend application"
 	app.Version = "1.4.1"
 	app.Author = "@oskapt"
 	app.Email = ""
